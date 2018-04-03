@@ -15,10 +15,13 @@ spec:
         image: jbossacr.azurecr.io/jboss-fuse-7-tech-preview/fuse-eap-openshift:v1
         ports: 
         - containerPort: 9990
+        volumeMounts:
+          - mountPath: /etc/sidekiq-dev/config
+            name: dev-sidekiq
       volumes:
         - name: dev-sidekiq
           configMap:
              name: dev
              items:
               - key: config
-                path:  sidekiq-dev.yml
+                path:  dev-sidekiq.yml
