@@ -7,5 +7,5 @@ RUN   if [ -d $JBOSS_HOME/properties ]; then for propfile in $(find "$JBOSS_HOME
         && echo $JBOSS_PROP \
         && echo "export JBOSS_PROPS=\"${JBOSS_PROP}\"" >> ~/.bashrc
 ENV PRESERVE_JAVA_OPTS=false
-ENV JAVA_OPTS="$JAVA_OPTS -Xmx1024m -Xms1024m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=$JBOSS_MODULES_SYSTEM_PKGS -Djava.awt.headless=true"
+ENV JAVA_OPTS="-Xmx1024m -Xms1024m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=$JBOSS_MODULES_SYSTEM_PKGS -Djava.awt.headless=true"
 ENTRYPOINT source ~/.bashrc && /opt/eap/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 $JBOSS_PROPS
