@@ -19,5 +19,5 @@ spec:
         - name: JAVA_OPTS
           value: "-Xmx1024m -Xms1024m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=$JBOSS_MODULES_SYSTEM_PKGS -Djava.awt.headless=true"
         command: ["/opt/eap/bin/standalone.sh"]
-        args: ["-b", "0.0.0.0", "-bmanagement", "0.0.0.0" "-P=./test.properties" ]
+        args: ["-b", "0.0.0.0", "-bmanagement", "0.0.0.0" "-P=./test.properties"]
       restartPolicy: OnFailure
