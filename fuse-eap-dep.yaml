@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: cons090
-        image: jbossacr.azurecr.io/jboss-fuse-7-tech-preview/fuse-eap-openshift:v1
+        image: jbossacr.azurecr.io/jboss-fuse-7-tech-preview/fuse-eap-openshift:kube
         env:
         - name: PRESERVE_JAVA_OPTS
           value: "false"
